@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-08-24T16:08:11Z" product-name="kuehlschrank">
+		<header/>
+		<body>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuehlschrankverwaltung">
+				<source>kuehlschrank</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuehlschrankverwaltung.description">
+				<source>Ein System zur </source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuelschrank">
+				<source>Kuelschrank</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuelschrank.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuelschrank.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuelschrank.getraenkefaecher">
+				<source>Getraenkefaecher</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_benutzer">
+				<source>Benutzer</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_benutzer.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_benutzer.kontostand">
+				<source>Kontostand</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_benutzer.fe_users">
+				<source>Fe Users</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_getraenkefaecher">
+				<source>Getraenkefaecher</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_getraenkefaecher.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_getraenkefaecher.max_anzahl">
+				<source>Max Anzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_getraenkefaecher.ist_anzahl">
+				<source>Ist Anzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_getraenkefaecher.preis">
+				<source>Preis</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_myfeusers">
+				<source>My Fe Users</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

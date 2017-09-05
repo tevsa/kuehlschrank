@@ -1,0 +1,69 @@
+
+{namespace assy=Asvet\Kuehlschrank\ViewHelpers}
+
+ <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<div class="row">	
+		<div class="col-md-4 col-sm-4 col-xs-4"><strong>Getr&auml;nkename</strong></div>
+		<div class="col-md-2 col-sm-2 col-xs-2"><strong>Soll</strong></div>
+		<div class="col-md-2 col-sm-2 col-xs-2"><strong>Ist</strong></div>
+		<div class="col-md-4 col-sm-4 col-xs-4"><strong>&nbsp;</strong></div>	
+	</div>
+<f:for each="{kuelschrank.getraenkefaecher}" as="fach" >
+	<div class="row">	
+		<div class="col-md-4 col-sm-4 col-xs-4">{fach.name}</div>
+		<div class="col-md-2 col-sm-2 col-xs-2">{fach.maxAnzahl}</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 {assy:myHelper(Text: fach.name)}" >{fach.istAnzahl}</div>
+		<div class="col-md-4 col-sm-4 col-xs-4"> 
+				<input type="checkbox" class="auswahl" data-toggle="toggle" data-getraenk="{assy:myHelper(Text: fach.name)}" data-guid="{fach.uid}">
+		</div>	
+
+	</div>
+ </f:for>	
+<f:for each="{users}" as="user" >
+<div class="row">
+	<button id="userid-{user.uid}" class="btn-primary user" data-uuid="{user.uid}"> {user.name} <br> {user.kontostand}</button>
+</f:for>	
+<div id="userInfo"></div> 
+</div>	
+
+<script type="text/javascript">
+var user = "-1";
+var gauswahl ='';
+var guid ='';
+jQuery(document).ready(function($) {
+		$('.user').click(function(event) {
+			user = $(this).data('uuid');
+		$('.toggle').each(function (index, value){
+       		var gonoff = $(this).attr('class');
+			if (gonoff.indexOf('off') == -1) {
+				gauswahl += $(this ).find(">:first-child").data('getraenk')+',';
+				guid += $(this ).find(">:first-child").data('guid')+',';
+			}
+		}); 
+		var ajaxUrl = '<f:uri.action  action="calculateajax" absolute="1" noCacheHash="1" pageType="99"/>'
+		//console.log('Benutzer: '+user + 'GetränkeUID: '+guid);
+		var datenarray =[user,gauswahl,guid];
+
+		var params = {'tx_kuehlschrank_kuehlschrankverwaltung[benutzer]':user,'tx_kuehlschrank_kuehlschrankverwaltung[getraenkeuid]':guid};
+
+		$.post(ajaxUrl,params,function(response){
+console.log(response);
+			var json = $.parseJSON(response);
+			$('#userInfo').html(json.Text);
+			
+			$.each(json,function(i,item){
+				$.each(item.drink,function(j,iteminner){
+					$('.'+{assy:myHelper(Text: 'j')}).html(iteminner);
+				});	
+
+			}); 
+
+			user ='';
+			gauswahl ='';
+			guid = '';
+		});
+	});
+});
+
+</script>
+</html>

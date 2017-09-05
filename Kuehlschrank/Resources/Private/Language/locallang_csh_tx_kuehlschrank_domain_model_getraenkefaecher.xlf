@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-08-24T16:08:11Z" product-name="kuehlschrank">
+		<header/>
+		<body>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuehlschrankverwaltung">
+				<source>kuehlschrank</source>
+			</trans-unit>
+			<trans-unit id="tx_kuehlschrank_domain_model_kuehlschrankverwaltung.description">
+				<source>Ein System zur </source>
+			</trans-unit>
+			<trans-unit id="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="max_anzahl.description">
+				<source>maxAnzahl</source>
+			</trans-unit>
+			<trans-unit id="ist_anzahl.description">
+				<source>istAnzahl</source>
+			</trans-unit>
+			<trans-unit id="preis.description">
+				<source>preis</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
